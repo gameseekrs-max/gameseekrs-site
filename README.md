@@ -29,9 +29,9 @@ The **Gameseekrs** repo (`seeker-rampage` locally) previously shipped legal HTML
 
 ## GitHub Pages
 
-1. Create **`gameseekrs-max/gameseekrs-site`** (empty), push this tree.
+1. **Repository** [gameseekrs-max/gameseekrs-site](https://github.com/gameseekrs-max/gameseekrs-site) — push this tree to **`main`** (see [Create repo and push](#create-repo-and-push) if the remote is empty).
 2. **Settings → Pages:** Deploy from branch **`main`**, folder **`/ (root)`**.
-3. Optional **Custom domain:** `gameseekrs.sol.site` — coordinate with SNS **Configure Sol.site** (CNAME to **`gameseekrs-max.github.io`** or IPFS DNSLink per SNS docs). **Disable** or change Pages on **Gameseekrs** before pointing the same hostname here.
+3. **Custom domain (optional):** `gameseekrs.sol.site` — repo root **`CNAME`** is set for GitHub Pages. In **Settings → Pages → Custom domain**, add the hostname, wait for DNS check, **Enforce HTTPS**. Coordinate with SNS **Configure Sol.site** (CNAME to **`gameseekrs-max.github.io`**) or IPFS DNSLink per [Sol.site DNS](https://docs.sns.id/collection/sns-v2/sol.site/website-configuration.md). **Disable** or change Pages on **Gameseekrs** before the same hostname points here.
 
 ## Firebase / IPFS
 
@@ -40,16 +40,24 @@ The **Gameseekrs** repo (`seeker-rampage` locally) previously shipped legal HTML
 
 ## Create repo and push
 
-An **org owner** for **gameseekrs-max** must create the empty **`gameseekrs-site`** repository (or grant your GitHub user permission to create repos in that org). If **`git push`** returns **`Repository not found`** or **`cannot create a repository for gameseekrs-max`**, fix org access first — the local tree is ready.
+The **`gameseekrs-max/gameseekrs-site`** repo should exist (empty is fine). Clone or init locally, then:
 
 ```bash
 cd /path/to/gameseekrs-site
-git init
+git init   # skip if already a git repo
 git add -A
 git commit -m "Initial GameSeekrs public hub + legal HTML"
 git branch -M main
 git remote add origin https://github.com/gameseekrs-max/gameseekrs-site.git
 git push -u origin main
 ```
+
+### If push fails
+
+| Symptom | What to do |
+|--------|------------|
+| **`Repository not found`** | Confirm the repo URL and that your GitHub user can **see** the repo (public or you’re a member). |
+| **`Permission … denied to`** another GitHub user / **403** | Git is using credentials for an account **without Write** on **`gameseekrs-max/gameseekrs-site`**. Push as an org member with write access: **`gh auth login`** with that account, use a **PAT** from that account for HTTPS, or **`git remote set-url origin git@github.com:gameseekrs-max/gameseekrs-site.git`** with an SSH key for that user. Alternatively add the blocked account as a **collaborator** with **Write**. |
+| **`cannot create a repository for gameseekrs-max`** (`gh repo create`) | Your user needs **org permission to create repos** — only an **owner** can grant that. |
 
 *Review counsel before production store submissions.*
