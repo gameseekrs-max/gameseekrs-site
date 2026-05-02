@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GameSeekrs — games and utilities for Solana Mobile Seeker. Public hub, legal HTML, and links (Vault Runner, GSkrs Flashlight)." />
+  <title>GameSeekrs</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0c0614;
+      --bg2: #15101f;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --accent: #c084fc;
+      --accent-dim: #7c3aed;
+      --card: #15101f;
+      --border: #2d2640;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.55;
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse 120% 80% at 50% -20%, #2a1538 0%, var(--bg) 50%);
+      color: var(--text);
+    }
+    .wrap { max-width: 38rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mark {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, var(--accent) 0%, var(--accent-dim) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(192, 132, 252, 0.2);
+    }
+    .mark svg { display: block; }
+    .title-block h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+      color: var(--accent);
+    }
+    .title-block p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+    .disclaimer {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+      padding: 0.65rem 0.85rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      line-height: 1.45;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+    section h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+      font-weight: 600;
+    }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { margin: 0.65rem 0; }
+    li:first-child { margin-top: 0; }
+    li:last-child { margin-bottom: 0; }
+    .app-intro { margin: 0 0 1rem; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+    .app-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .app-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    }
+    .app-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .app-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .app-card .app-desc { margin: 0 0 0.75rem; font-size: 0.88rem; color: var(--muted); line-height: 1.45; flex: 1; }
+    .legal-mini {
+      margin: 0;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .legal-mini strong { color: #c4c7cc; font-weight: 600; }
+    .legal-mini a { font-weight: 600; }
+    .legal-intro {
+      margin: 0 0 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .legal-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .legal-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    }
+    .legal-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.15rem;
+    }
+    .legal-card h3.legal-app-name {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .legal-card .legal-card-note {
+      margin: 0 0 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .legal-card ul { margin: 0; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover { text-decoration: underline; }
+    .external::after {
+      content: " ↗";
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    footer strong { color: #c4c7cc; font-weight: 600; }
+    code { font-size: 0.85em; background: var(--bg2); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="4" width="24" height="24" rx="6" stroke="#0c0614" stroke-width="2" opacity="0.4"/>
+          <path d="M10 22 L16 10 L22 22 Z" fill="#0c0614"/>
+        </svg>
+      </div>
+      <div class="title-block">
+        <h1>GameSeekrs</h1>
+        <p><strong>GameSeekrs</strong> is our games-and-utilities brand on <strong>Solana Mobile Seeker</strong> — public hub for the line, per-app legal HTML, and program transparency.</p>
+      </div>
+    </header>
+
+    <p class="disclaimer">
+      <strong>Disclaimer:</strong> Titles here are for <strong>entertainment</strong> or utility as described in each app’s listing — not financial or medical advice.
+    </p>
+
+    <section aria-labelledby="apps-heading">
+      <h2 id="apps-heading">Apps on Seeker</h2>
+      <p class="app-intro">Shipping today — more GameSeekrs titles will be listed as they launch. Each app has its own privacy and terms under <code>vault-runner/</code> or <code>flashlight/</code>.</p>
+      <div class="app-grid">
+        <article class="app-card" aria-labelledby="app-vault-title">
+          <h3 id="app-vault-title">Vault Runner</h3>
+          <p class="app-desc">
+            Skill-based arcade game for Seeker with optional wallet and on-chain features. Anchor program is open source in <strong>Gameseekrs</strong>; mobile client repo is private.
+          </p>
+          <p class="legal-mini"><strong>Legal</strong> —
+            <a href="vault-runner/privacy.html">Privacy</a> ·
+            <a href="vault-runner/terms.html">Terms</a> ·
+            <a href="vault-runner/license.html">License</a>
+          </p>
+        </article>
+        <article class="app-card" aria-labelledby="app-flash-title">
+          <h3 id="app-flash-title">GSkrs Flashlight</h3>
+          <p class="app-desc">
+            Torch, strobe, Clip &amp; Pick, optional Solana Mobile Wallet Adapter — Android / Seeker first. Source may be private; policies are public here.
+          </p>
+          <p class="legal-mini"><strong>Legal</strong> —
+            <a href="flashlight/privacy.html">Privacy</a> ·
+            <a href="flashlight/terms.html">Terms</a> ·
+            <a href="flashlight/license.html">License</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="legal-heading">
+      <h2 id="legal-heading">Legal documents</h2>
+      <p class="legal-intro">
+        <strong>Per-app policies.</strong> Use the correct folder for store listings and in-app links — Vault Runner vs GSkrs Flashlight are different products.
+      </p>
+      <div class="legal-grid">
+        <div class="legal-card">
+          <h3 class="legal-app-name" id="legal-vault">Vault Runner</h3>
+          <p class="legal-card-note">Privacy, terms, and MIT license text tied to the public program repo.</p>
+          <ul aria-labelledby="legal-vault">
+            <li><a href="vault-runner/privacy.html">Privacy policy</a></li>
+            <li><a href="vault-runner/terms.html">Terms of use</a></li>
+            <li><a href="vault-runner/license.html">License (MIT)</a></li>
+          </ul>
+        </div>
+        <div class="legal-card">
+          <h3 class="legal-app-name" id="legal-flash">GSkrs Flashlight</h3>
+          <p class="legal-card-note">Privacy and terms for the flashlight utility; license references the shared program license where applicable.</p>
+          <ul aria-labelledby="legal-flash">
+            <li><a href="flashlight/privacy.html">Privacy policy</a></li>
+            <li><a href="flashlight/terms.html">Terms of use</a></li>
+            <li><a href="flashlight/license.html">License (MIT)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="official-heading">
+      <h2 id="official-heading">Official</h2>
+      <ul>
+        <li><a class="external" href="https://x.com/gameseekrs" rel="noopener noreferrer">X (@gameseekrs)</a></li>
+        <li><a class="external" href="https://github.com/gameseekrs-max/Gameseekrs" rel="noopener noreferrer">Gameseekrs — Anchor program + markdown sources</a></li>
+        <li><a class="external" href="https://github.com/gameseekrs-max/GSkrsFlashlight" rel="noopener noreferrer">GSkrs Flashlight (app repo)</a></li>
+        <li><a class="external" href="https://github.com/gameseekrs-max/gameseekrs-site" rel="noopener noreferrer">This public site (gameseekrs-site)</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>Canonical hub:</strong> <code>https://gameseekrs.sol.site</code> once Sol.site / DNS points at this deployment (see repo <code>README.md</code>). <strong>GitHub Pages:</strong> <a href="https://gameseekrs-max.github.io/gameseekrs-site/">gameseekrs-max.github.io/gameseekrs-site</a> after enabling Pages on <code>main</code> from repo root.</p>
+      <p style="margin-top:0.75rem"><strong>Legacy mirror:</strong> older HTML under <code>Gameseekrs</code> repo <code>docs/</code> may remain until apps migrate <code>GAMESEEKRS_LEGAL_PAGES_BASE</code> to this site.</p>
+    </footer>
+  </div>
+</body>
+</html>
