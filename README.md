@@ -40,6 +40,8 @@ The **Gameseekrs** repo (`seeker-rampage` locally) previously shipped legal HTML
 
 ## Create repo and push
 
+An **org owner** for **gameseekrs-max** must create the empty **`gameseekrs-site`** repository (or grant your GitHub user permission to create repos in that org). If **`git push`** returns **`Repository not found`** or **`cannot create a repository for gameseekrs-max`**, fix org access first — the local tree is ready.
+
 ```bash
 cd /path/to/gameseekrs-site
 git init
