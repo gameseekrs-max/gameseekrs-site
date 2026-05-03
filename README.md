@@ -19,7 +19,7 @@ Public **static hub** for the **GameSeekrs** line (Solana Mobile Seeker): root l
 | **`assets/hub-site.css`** | Landing page layout and theme (distinct from generic teal/sage “app hub” patterns) |
 | **`assets/legal.css`** | Shared stylesheet for legal pages + legal library |
 
-**Agent / thread handoff:** This repo is **public** — do **not** add long **`CONTINUATION.md`** narratives here (root **`CONTINUATION.md`** is **`.gitignore`d**). Use private **`gameseekrs-max/VaultRunner`** → **`docs/continuation.md`**.
+**Agent / thread handoff:** This repo is **public** on GitHub — long continuation / thread handoffs **cannot** be included here (they **may** live only in **private** repos). Root **`CONTINUATION.md`** is **`.gitignore`d** on purpose. Use private **`gameseekrs-max/VaultRunner`** → **`docs/continuation.md`** (**§ *Continuation files — private repos only***).
 
 **Hub copy:** GameSeekrs is **games and utilities** (arcade + flashlight + tools). Keep taglines and store blurbs in that lane; use **financial / legal / tax** wording only where wallet and on-chain features need it. See private **`gameseekrs-max/VaultRunner`** → **`docs/continuation.md`** (*GameSeekrs public hub voice*).
 
