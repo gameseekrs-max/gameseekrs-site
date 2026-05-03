@@ -30,12 +30,9 @@ Policy text may also exist as markdown in the public **[Gameseekrs](https://gith
 
 1. Repository [gameseekrs-max/gameseekrs-site](https://github.com/gameseekrs-max/gameseekrs-site) — push this tree to **`main`**.
 2. **Settings → Pages:** Deploy from branch **`main`**, folder **`/ (root)`**.
-3. **Custom domain:** `gameseekrs.sol.site` — root **`CNAME`** supports GitHub Pages. In **Settings → Pages → Custom domain**, add the hostname, wait for DNS check, **Enforce HTTPS**. Coordinate with SNS **Configure Sol.site** (CNAME to **`gameseekrs-max.github.io`**) or IPFS DNSLink per [Sol.site DNS](https://docs.sns.id/collection/sns-v2/sol.site/website-configuration.md). Only one site should publish the same hostname.
+3. **Custom domain:** `gameseekrs.sol.site` — root **`CNAME`** supports GitHub Pages. In **Settings → Pages → Custom domain**, add the hostname, wait for DNS check, **Enforce HTTPS**. In **sns.id**, **Configure Sol.site** with CNAME to **`gameseekrs-max.github.io`** ([Sol.site DNS](https://docs.sns.id/collection/sns-v2/sol.site/website-configuration.md)). Only one site should publish the same hostname.
 
-## Firebase / IPFS
-
-- **`firebase.json`** — `firebase deploy --only hosting` (after `firebase use --add`).
-- **`scripts/ipfs-stage-and-add.sh`** — local Kubo CID for sns.id **IPFS** record.
+Hosting is **Git only** (GitHub Pages + Sol.site). Legacy **`firebase.json`** / **`scripts/ipfs-*.sh`** files are not part of the active deploy path.
 
 ## First-time clone and push
 
