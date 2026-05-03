@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="GameSeekrs — games and utilities for Solana Mobile Seeker. Vault Runner, GSkrs Flashlight, legal hub, and links." />
   <title>GameSeekrs</title>
+  <link rel="icon" href="assets/brand-icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/brand-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       color-scheme: dark;
-      --void: #06040a;
-      --grid: #1a1030;
-      --panel: rgba(22, 12, 38, 0.88);
-      --text: #f4edff;
-      --muted: #b9a3d4;
-      --violet: #a855f7;
-      --violet-hot: #c084fc;
-      --cyan: #22d3ee;
-      --cyan-dim: #0891b2;
-      --edge: rgba(168, 85, 247, 0.45);
-      --glow: rgba(168, 85, 247, 0.35);
+      /* GameSeekrs app icon: electric cyan → royal indigo, white mark on squircle */
+      --cyan: #00d4ff;
+      --cyan-glow: #5cefff;
+      --indigo: #3a47d5;
+      --indigo-deep: #252f8f;
+      --void: #040814;
+      --panel: rgba(8, 14, 40, 0.92);
+      --text: #f0f7ff;
+      --muted: #8ba3c4;
+      --border: rgba(0, 212, 255, 0.35);
+      --edge: linear-gradient(135deg, var(--cyan) 0%, var(--indigo) 100%);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -35,12 +37,12 @@
       line-height: 1.55;
       background-color: var(--void);
       background-image:
-        linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px),
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(168, 85, 247, 0.25) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 100% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
-        linear-gradient(180deg, #12081f 0%, var(--void) 35%, #040208 100%);
-      background-size: 24px 24px, 24px 24px, auto, auto, auto;
+        linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 71, 213, 0.06) 1px, transparent 1px),
+        radial-gradient(ellipse 100% 70% at 50% -15%, rgba(0, 212, 255, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 45% at 100% 100%, rgba(58, 71, 213, 0.35) 0%, transparent 55%),
+        linear-gradient(180deg, #0a1028 0%, var(--void) 40%, #020308 100%);
+      background-size: 22px 22px, 22px 22px, auto, auto, auto;
     }
     .arena {
       max-width: 52rem;
@@ -53,9 +55,9 @@
       padding: clamp(1.5rem, 4vw, 2.5rem) 1rem clamp(2rem, 4vw, 2.75rem);
       margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px));
-      background: linear-gradient(165deg, rgba(34, 211, 238, 0.08) 0%, var(--panel) 45%, rgba(168, 85, 247, 0.12) 100%);
-      border: 1px solid var(--edge);
-      box-shadow: 0 0 60px var(--glow), inset 0 0 80px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(155deg, rgba(0, 212, 255, 0.12) 0%, var(--panel) 40%, rgba(58, 71, 213, 0.25) 100%);
+      border: 1px solid var(--border);
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.15), inset 0 0 60px rgba(0, 0, 0, 0.35);
     }
     .hero::before {
       content: "";
@@ -65,8 +67,8 @@
         -8deg,
         transparent,
         transparent 3px,
-        rgba(34, 211, 238, 0.03) 3px,
-        rgba(34, 211, 238, 0.03) 6px
+        rgba(0, 212, 255, 0.04) 3px,
+        rgba(0, 212, 255, 0.04) 6px
       );
       pointer-events: none;
     }
@@ -75,19 +77,21 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: clamp(92px, 19vw, 118px);
-      height: clamp(92px, 19vw, 118px);
-      margin-bottom: 1.1rem;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--violet-hot) 0%, #6d28d9 50%, var(--cyan-dim) 100%);
-      box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35), 0 12px 40px rgba(168, 85, 247, 0.45);
-      transform: rotate(-3deg);
+      margin-bottom: 1.15rem;
+      padding: 0.25rem;
+      border-radius: 24%;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.25) 0%, rgba(58, 71, 213, 0.45) 100%);
+      box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.45), 0 14px 40px rgba(58, 71, 213, 0.35);
+      transform: rotate(-2deg);
     }
-    .logo-wrap svg {
-      width: 62%;
-      height: 62%;
-      transform: rotate(3deg);
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    .logo-wrap img {
+      display: block;
+      width: clamp(96px, 20vw, 128px);
+      height: auto;
+      border-radius: 20%;
+      object-fit: contain;
+      transform: rotate(2deg);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
     }
     h1 {
       font-family: "Orbitron", sans-serif;
@@ -97,11 +101,11 @@
       text-transform: uppercase;
       margin: 0 0 0.35rem;
       line-height: 1.1;
-      background: linear-gradient(90deg, var(--text) 0%, var(--violet-hot) 40%, var(--cyan) 100%);
+      background: linear-gradient(90deg, #ffffff 0%, var(--cyan-glow) 35%, var(--indigo) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+      text-shadow: 0 0 40px rgba(0, 212, 255, 0.35);
     }
     .tagline {
       font-family: "Rajdhani", sans-serif;
@@ -113,20 +117,20 @@
       line-height: 1.45;
       letter-spacing: 0.02em;
     }
-    .tagline strong { color: var(--cyan); font-weight: 700; }
+    .tagline strong { color: var(--cyan-glow); font-weight: 700; }
     .hud-note {
       display: inline-block;
       font-size: 0.92rem;
       font-weight: 600;
       color: var(--muted);
       padding: 0.5rem 1rem;
-      border: 1px solid rgba(34, 211, 238, 0.35);
+      border: 1px solid rgba(0, 212, 255, 0.4);
       border-radius: 6px;
-      background: rgba(6, 4, 10, 0.6);
+      background: rgba(4, 8, 20, 0.65);
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .hud-note strong { color: var(--violet-hot); }
+    .hud-note strong { color: var(--cyan); }
     h2.section-title {
       font-family: "Orbitron", sans-serif;
       font-size: 0.72rem;
@@ -136,7 +140,7 @@
       color: var(--cyan);
       margin: 0 0 1.1rem;
       text-align: center;
-      text-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+      text-shadow: 0 0 24px rgba(0, 212, 255, 0.4);
     }
     .app-grid {
       display: grid;
@@ -149,7 +153,7 @@
     .app-card {
       position: relative;
       background: var(--panel);
-      border: 1px solid var(--edge);
+      border: 1px solid rgba(0, 212, 255, 0.28);
       border-radius: 4px 18px 4px 18px;
       padding: 1.45rem 1.35rem;
       display: flex;
@@ -164,22 +168,22 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--violet), var(--cyan));
       border-radius: 4px 18px 0 0;
-      opacity: 0.9;
+      background: var(--edge);
+      opacity: 0.95;
     }
     .app-card:hover {
-      transform: translateY(-3px) skewX(-0.5deg);
-      box-shadow: 0 14px 36px rgba(168, 85, 247, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0, 212, 255, 0.12);
     }
     .app-card h3 {
       font-family: "Orbitron", sans-serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin: 0.35rem 0 0.6rem;
-      color: var(--violet-hot);
+      color: var(--cyan-glow);
     }
     .app-card p {
       margin: 0 0 1rem;
@@ -192,7 +196,7 @@
     .app-card .legal-row {
       margin: 0;
       padding-top: 0.95rem;
-      border-top: 1px dashed rgba(168, 85, 247, 0.35);
+      border-top: 1px dashed rgba(0, 212, 255, 0.35);
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.06em;
@@ -201,7 +205,7 @@
       color: var(--cyan);
       text-decoration: none;
     }
-    a:hover { color: var(--violet-hot); text-decoration: underline; }
+    a:hover { color: var(--cyan-glow); text-decoration: underline; }
     .external::after {
       content: " ↗";
       font-size: 0.85em;
@@ -212,8 +216,8 @@
       padding: 1.4rem 1.35rem;
       clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
       background: var(--panel);
-      border: 1px solid var(--edge);
-      box-shadow: 0 0 40px rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(58, 71, 213, 0.45);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
     }
     .official h2 {
       font-family: "Orbitron", sans-serif;
@@ -221,7 +225,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--violet-hot);
+      color: var(--cyan-glow);
       margin: 0 0 0.75rem;
     }
     .official ul { list-style: none; padding: 0; margin: 0; }
@@ -232,25 +236,15 @@
       background: rgba(0, 0, 0, 0.35);
       padding: 0.1rem 0.35rem;
       border-radius: 4px;
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      border: 1px solid rgba(0, 212, 255, 0.35);
     }
   </style>
 </head>
 <body>
   <div class="arena">
     <header class="hero">
-      <div class="logo-wrap" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="gsBolt" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#fae8ff"/>
-              <stop offset="50%" style="stop-color:#22d3ee"/>
-              <stop offset="100%" style="stop-color:#7c3aed"/>
-            </linearGradient>
-          </defs>
-          <rect x="8" y="8" width="48" height="48" rx="10" fill="#06040a" stroke="url(#gsBolt)" stroke-width="2"/>
-          <path d="M34 14 L26 30 h8 l-6 20 14-22 h-9 l7-14z" fill="url(#gsBolt)"/>
-        </svg>
+      <div class="logo-wrap">
+        <img src="assets/brand-icon.png" width="128" height="128" alt="GameSeekrs — app icon" decoding="async" />
       </div>
       <h1>GameSeekrs</h1>
       <p class="tagline">
