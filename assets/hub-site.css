@@ -1,6 +1,5 @@
-/* GameSeekrs hub — layout + palette intentionally distinct from Optima Sanitas
-   (optimasanitas-site: centered teal/sage hub for their apps). Here: left-weighted
-   column, warm amber / violet “dossier”, Chakra Petch + DM Sans. */
+/* GameSeekrs hub — own layout + palette (left-weighted “dossier” rail, warm amber / violet,
+   Chakra Petch + DM Sans). Keep distinct from generic centered teal/sage “app hub” patterns. */
 
 :root {
   color-scheme: dark;

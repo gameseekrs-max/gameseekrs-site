@@ -1,6 +1,6 @@
 /* GameSeekrs legal + library pages — paired with hub-site.css identity:
    left column, warm amber / violet, Chakra Petch + DM Sans.
-   Deliberately not the centered teal hub shell used on optimasanitas-site. */
+   Deliberately not a generic centered teal “app hub” shell. */
 
 :root {
   color-scheme: dark;
@@ -312,7 +312,7 @@ a:hover {
   color: var(--amber);
 }
 
-/* ——— legal.html hub (card stack, not Optima-style rounded glass grid) ——— */
+/* ——— legal.html hub (card stack, not rounded-glass marketing grid) ——— */
 h2.section-title {
   font-family: "Chakra Petch", sans-serif;
   font-size: 0.78rem;
