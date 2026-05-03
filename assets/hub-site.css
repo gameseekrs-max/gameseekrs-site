@@ -1,0 +1,307 @@
+/* GameSeekrs hub — layout + palette intentionally distinct from Optima Sanitas
+   (optimasanitas-site: centered shell, teal/sage wellness). Here: left-weighted
+   column, warm amber / violet “dossier”, Chakra Petch + DM Sans. */
+
+:root {
+  color-scheme: dark;
+  --ink: #0a070c;
+  --panel: rgba(22, 12, 28, 0.94);
+  --panel-soft: rgba(32, 18, 38, 0.88);
+  --text: #f4eef8;
+  --muted: #b9a8c4;
+  --amber: #ffb24a;
+  --amber-dim: #c77d28;
+  --magenta: #e94d8a;
+  --violet: #7c5cff;
+  --rail: linear-gradient(180deg, var(--amber) 0%, var(--magenta) 55%, var(--violet) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--text);
+  line-height: 1.58;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(115deg, rgba(124, 92, 255, 0.07) 0%, transparent 42%),
+    linear-gradient(-18deg, rgba(233, 77, 138, 0.06) 0%, transparent 38%),
+    radial-gradient(ellipse 90% 55% at 0% 0%, rgba(255, 178, 74, 0.12) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(124, 92, 255, 0.18) 0%, transparent 50%),
+    linear-gradient(180deg, #140c18 0%, var(--ink) 45%, #050308 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--rail);
+  z-index: 50;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  body::before {
+    width: 3px;
+  }
+}
+
+.arena {
+  max-width: 44rem;
+  margin: 0;
+  margin-left: max(0px, min(4.5rem, 8vw));
+  padding: clamp(1.35rem, 3vw, 2.25rem) clamp(1rem, 3vw, 1.75rem) clamp(2.5rem, 5vw, 3.25rem)
+    clamp(0.85rem, 2.5vw, 1.25rem);
+}
+
+@media (min-width: 900px) {
+  .arena {
+    margin-left: max(1.5rem, calc((100vw - 44rem) * 0.22));
+  }
+}
+
+.hero {
+  text-align: left;
+  padding: 0 0 clamp(1.75rem, 3vw, 2.35rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  border-bottom: 1px solid rgba(255, 178, 74, 0.22);
+}
+
+@media (min-width: 640px) {
+  .hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 1.25rem;
+    row-gap: 0.35rem;
+    align-items: start;
+  }
+
+  .hero .logo-wrap {
+    grid-row: 1 / span 3;
+    align-self: start;
+    margin-bottom: 0;
+  }
+
+  .hero h1 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .hero .tagline {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .hero .hud-note {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.35rem;
+  }
+}
+
+.logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  padding: 0.2rem;
+  border-radius: 18%;
+  background: linear-gradient(145deg, rgba(255, 178, 74, 0.2) 0%, rgba(124, 92, 255, 0.25) 100%);
+  border: 1px solid rgba(255, 178, 74, 0.35);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+  transform: none;
+}
+
+.logo-wrap img {
+  display: block;
+  width: clamp(72px, 16vw, 104px);
+  height: auto;
+  border-radius: 16%;
+  object-fit: contain;
+  transform: none;
+  filter: drop-shadow(0 3px 14px rgba(0, 0, 0, 0.5));
+}
+
+h1 {
+  font-family: "Chakra Petch", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.55rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.08;
+  background: linear-gradient(92deg, #fff7ea 0%, var(--amber) 42%, var(--magenta) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2.8vw, 1.28rem);
+  color: var(--muted);
+  max-width: 36rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tagline strong {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.hud-note {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.45rem 0.85rem;
+  border-left: 3px solid var(--amber);
+  background: var(--panel-soft);
+  letter-spacing: 0.02em;
+}
+
+.hud-note strong {
+  color: var(--amber);
+}
+
+h2.section-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber-dim);
+  margin: 0 0 1rem;
+  text-align: left;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--magenta);
+}
+
+.app-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.app-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid rgba(124, 92, 255, 0.28);
+  border-radius: 2px 12px 2px 12px;
+  border-left: 4px solid var(--amber);
+  padding: 1.25rem 1.2rem 1.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.app-card:hover {
+  border-color: rgba(255, 178, 74, 0.45);
+  transform: translateX(4px);
+}
+
+.app-card h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  color: var(--amber);
+}
+
+.app-card p {
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--muted);
+  flex: 1;
+  line-height: 1.52;
+}
+
+.app-card .legal-row {
+  margin: 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(233, 77, 138, 0.25);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+a {
+  color: var(--violet);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--amber);
+  text-decoration: underline;
+}
+
+.external::after {
+  content: " ↗";
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+
+.official {
+  margin-top: clamp(1.85rem, 3.5vw, 2.65rem);
+  padding: 1.1rem 0 0;
+  border-top: 1px dashed rgba(255, 178, 74, 0.28);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.official h2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin: 0 0 0.65rem;
+}
+
+.official ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+}
+
+.official li {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.88em;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  color: var(--amber);
+}

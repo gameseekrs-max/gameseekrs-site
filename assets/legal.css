@@ -1,16 +1,19 @@
-/* GameSeekrs legal pages — matches hub (index): Orbitron + Rajdhani, cyan / indigo arena */
+/* GameSeekrs legal + library pages — paired with hub-site.css identity:
+   left column, warm amber / violet, Chakra Petch + DM Sans.
+   Deliberately not the centered teal “wellness shell” used on optimasanitas-site. */
+
 :root {
   color-scheme: dark;
-  --cyan: #00d4ff;
-  --cyan-glow: #5cefff;
-  --indigo: #3a47d5;
-  --indigo-deep: #252f8f;
-  --void: #040814;
-  --panel: rgba(8, 14, 40, 0.92);
-  --text: #f0f7ff;
-  --muted: #8ba3c4;
-  --border: rgba(0, 212, 255, 0.35);
-  --edge: linear-gradient(135deg, var(--cyan) 0%, var(--indigo) 100%);
+  --ink: #0a070c;
+  --panel: rgba(22, 12, 28, 0.94);
+  --panel-soft: rgba(32, 18, 38, 0.88);
+  --text: #f4eef8;
+  --muted: #b9a8c4;
+  --amber: #ffb24a;
+  --amber-dim: #c77d28;
+  --magenta: #e94d8a;
+  --violet: #7c5cff;
+  --rail: linear-gradient(180deg, var(--amber) 0%, var(--magenta) 55%, var(--violet) 100%);
 }
 
 * {
@@ -26,49 +29,95 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Rajdhani", system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--text);
-  line-height: 1.55;
-  background-color: var(--void);
+  line-height: 1.58;
+  background-color: var(--ink);
   background-image:
-    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 71, 213, 0.06) 1px, transparent 1px),
-    radial-gradient(ellipse 100% 70% at 50% -15%, rgba(0, 212, 255, 0.16) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 45% at 100% 100%, rgba(58, 71, 213, 0.32) 0%, transparent 55%),
-    linear-gradient(180deg, #0a1028 0%, var(--void) 40%, #020308 100%);
-  background-size: 22px 22px, 22px 22px, auto, auto, auto;
+    linear-gradient(115deg, rgba(124, 92, 255, 0.07) 0%, transparent 42%),
+    linear-gradient(-18deg, rgba(233, 77, 138, 0.06) 0%, transparent 38%),
+    radial-gradient(ellipse 90% 55% at 0% 0%, rgba(255, 178, 74, 0.1) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(124, 92, 255, 0.16) 0%, transparent 50%),
+    linear-gradient(180deg, #140c18 0%, var(--ink) 45%, #050308 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--rail);
+  z-index: 50;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  body::before {
+    width: 3px;
+  }
 }
 
 .arena {
-  max-width: 52rem;
-  margin: 0 auto;
-  padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.5vw, 1.5rem) clamp(2.25rem, 4vw, 3rem);
+  max-width: 44rem;
+  margin: 0;
+  margin-left: max(0px, min(4.5rem, 8vw));
+  padding: clamp(1.15rem, 2.5vw, 1.85rem) clamp(1rem, 3vw, 1.75rem) clamp(2rem, 4vw, 2.75rem)
+    clamp(0.85rem, 2.5vw, 1.25rem);
+}
+
+@media (min-width: 900px) {
+  .arena {
+    margin-left: max(1.5rem, calc((100vw - 44rem) * 0.22));
+  }
 }
 
 .hero--legal {
-  position: relative;
-  text-align: center;
-  padding: clamp(1rem, 2.5vw, 1.5rem) 1rem clamp(1.35rem, 3vw, 1.85rem);
-  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
-  background: linear-gradient(155deg, rgba(0, 212, 255, 0.1) 0%, var(--panel) 45%, rgba(58, 71, 213, 0.22) 100%);
-  border: 1px solid var(--border);
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.12), inset 0 0 40px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  padding: 0 0 clamp(1.15rem, 2.5vw, 1.65rem);
+  margin-bottom: clamp(1.1rem, 2.5vw, 1.5rem);
+  border-bottom: 1px solid rgba(255, 178, 74, 0.22);
+}
+
+@media (min-width: 520px) {
+  .hero--legal {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.1rem;
+    row-gap: 0.2rem;
+    align-items: center;
+  }
+
+  .hero--legal .logo-wrap {
+    grid-row: 1 / span 2;
+    margin-bottom: 0;
+  }
+
+  .hero--legal .brand-title {
+    grid-column: 2;
+    align-self: end;
+  }
+
+  .hero--legal .tagline-legal {
+    grid-column: 2;
+    align-self: start;
+  }
 }
 
 .hero--legal .logo-wrap {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
-  padding: 0.2rem;
-  border-radius: 24%;
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.22) 0%, rgba(58, 71, 213, 0.4) 100%);
-  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.35), 0 10px 28px rgba(58, 71, 213, 0.28);
-  transform: rotate(-2deg);
+  margin-bottom: 0.65rem;
+  padding: 0.15rem;
+  border-radius: 18%;
+  background: linear-gradient(145deg, rgba(255, 178, 74, 0.18) 0%, rgba(124, 92, 255, 0.22) 100%);
+  border: 1px solid rgba(255, 178, 74, 0.32);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.42);
+  transform: none;
 }
 
 a.logo-wrap {
@@ -77,22 +126,22 @@ a.logo-wrap {
 
 .hero--legal .logo-wrap img {
   display: block;
-  width: clamp(72px, 16vw, 96px);
+  width: clamp(64px, 14vw, 88px);
   height: auto;
-  border-radius: 20%;
+  border-radius: 16%;
   object-fit: contain;
-  transform: rotate(2deg);
-  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
+  transform: none;
+  filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.48));
 }
 
 .brand-title {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 800;
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 0.25rem;
-  background: linear-gradient(90deg, #ffffff 0%, var(--cyan-glow) 40%, var(--indigo) 100%);
+  margin: 0 0 0.2rem;
+  background: linear-gradient(92deg, #fff7ea 0%, var(--amber) 45%, var(--magenta) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -101,7 +150,7 @@ a.logo-wrap {
 .brand-title a {
   color: inherit;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .brand-title a:hover {
@@ -109,71 +158,73 @@ a.logo-wrap {
 }
 
 .tagline-legal {
-  font-family: "Rajdhani", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--muted);
   margin: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .tagline-legal a {
-  color: var(--cyan-glow);
+  color: var(--amber);
   text-decoration: none;
   font-weight: 700;
 }
 
 .tagline-legal a:hover {
   text-decoration: underline;
-  color: var(--cyan);
+  color: var(--magenta);
 }
 
 main.legal-doc {
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 40rem;
+  margin: 0;
+  padding: 0 0 clamp(1.35rem, 2.5vw, 2rem);
+  border-left: 2px solid rgba(124, 92, 255, 0.35);
+  padding-left: clamp(0.85rem, 2vw, 1.15rem);
 }
 
 main.legal-doc h1 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   font-weight: 700;
-  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(1.05rem, 2.5vw, 1.32rem);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  line-height: 1.25;
-  margin: 0 0 0.65rem;
-  color: var(--cyan-glow);
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+  line-height: 1.28;
+  margin: 0 0 0.55rem;
+  color: var(--amber);
 }
 
 main.legal-doc .meta {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 0 1.25rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed rgba(0, 212, 255, 0.3);
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(233, 77, 138, 0.22);
 }
 
 main.legal-doc h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.78rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--cyan);
-  margin: 1.5rem 0 0.5rem;
-  text-shadow: 0 0 14px rgba(0, 212, 255, 0.35);
+  color: var(--magenta);
+  margin: 1.35rem 0 0.45rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--amber);
 }
 
 main.legal-doc h2:first-of-type {
-  margin-top: 0.75rem;
+  margin-top: 0.65rem;
 }
 
 main.legal-doc p,
 main.legal-doc li {
   color: var(--muted);
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.6rem;
 }
 
 main.legal-doc strong {
@@ -183,161 +234,146 @@ main.legal-doc strong {
 
 main.legal-doc ul,
 main.legal-doc ol {
-  padding-left: 1.2rem;
-  margin: 0 0 0.75rem;
+  padding-left: 1.15rem;
+  margin: 0 0 0.65rem;
 }
 
 main.legal-doc code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.86em;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.12rem 0.4rem;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 212, 255, 0.35);
-  color: var(--cyan-glow);
+  background: rgba(0, 0, 0, 0.38);
+  padding: 0.1rem 0.38rem;
+  border-radius: 3px;
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  color: var(--amber);
 }
 
 main.legal-doc pre {
   white-space: pre-wrap;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.82rem;
-  line-height: 1.5;
+  line-height: 1.52;
   background: var(--panel);
-  padding: 1rem 1.1rem;
-  border-radius: 6px 14px 6px 14px;
-  border: 1px solid rgba(0, 212, 255, 0.28);
+  padding: 0.95rem 1rem;
+  border-radius: 2px 10px 2px 10px;
+  border: 1px solid rgba(255, 178, 74, 0.22);
+  border-left: 3px solid var(--violet);
   color: var(--text);
-  margin: 1rem 0;
+  margin: 0.9rem 0;
 }
 
 a,
 a:link,
 a:visited {
-  color: var(--cyan);
+  color: var(--violet);
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: var(--cyan-glow);
+  color: var(--amber);
   text-decoration: underline;
 }
 
 .legal-nav {
-  margin-top: 1.75rem;
-  padding-top: 1.1rem;
-  border-top: 1px dashed rgba(0, 212, 255, 0.35);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(233, 77, 138, 0.22);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .sourcelink {
-  margin-top: 1.25rem;
-  font-size: 0.88rem;
+  margin-top: 1.1rem;
+  font-size: 0.86rem;
   color: var(--muted);
   font-weight: 500;
 }
 
 .muted-legal {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--muted);
   font-style: italic;
-  margin-top: 1.25rem;
+  margin-top: 1.1rem;
 }
 
 .footer-site {
-  text-align: center;
-  padding-top: 1.5rem;
-  margin-top: 0.5rem;
-  border-top: 1px solid rgba(58, 71, 213, 0.35);
-  font-size: 0.85rem;
+  text-align: left;
+  padding-top: 1.35rem;
+  margin-top: 0.35rem;
+  border-top: 1px dashed rgba(255, 178, 74, 0.28);
+  font-size: 0.84rem;
   color: var(--muted);
   font-weight: 600;
 }
 
 .footer-site a {
-  color: var(--cyan-glow);
+  color: var(--amber);
 }
 
-/* ——— legal.html hub (same card language as index) ——— */
+/* ——— legal.html hub (card stack, not Optima-style rounded glass grid) ——— */
 h2.section-title {
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.72rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--cyan);
-  margin: 0 0 1.1rem;
-  text-align: center;
-  text-shadow: 0 0 24px rgba(0, 212, 255, 0.4);
+  color: var(--amber-dim);
+  margin: 0 0 0.95rem;
+  text-align: left;
+  padding-left: 0.55rem;
+  border-left: 3px solid var(--magenta);
 }
 
 .app-grid {
-  display: grid;
-  gap: 1.2rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 640px) {
-  .app-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
 }
 
 .app-card {
   position: relative;
   background: var(--panel);
-  border: 1px solid rgba(0, 212, 255, 0.28);
-  border-radius: 4px 18px 4px 18px;
-  padding: 1.45rem 1.35rem;
+  border: 1px solid rgba(124, 92, 255, 0.26);
+  border-radius: 2px 12px 2px 12px;
+  border-left: 4px solid var(--amber);
+  padding: 1.15rem 1.1rem 1.05rem 1.2rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-}
-
-.app-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  border-radius: 4px 18px 0 0;
-  background: var(--edge);
-  opacity: 0.95;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38);
 }
 
 .app-card h3 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.05rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.98rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0.35rem 0 0.6rem;
-  color: var(--cyan-glow);
+  margin: 0 0 0.45rem;
+  color: var(--amber);
 }
 
 .app-card p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.96rem;
   font-weight: 500;
   color: var(--muted);
   flex: 1;
-  line-height: 1.5;
+  line-height: 1.52;
 }
 
 .app-card .legal-row {
   margin: 0;
-  padding-top: 0.95rem;
-  border-top: 1px dashed rgba(0, 212, 255, 0.35);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(233, 77, 138, 0.22);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .external::after {
   content: " ↗";
   font-size: 0.85em;
-  opacity: 0.7;
+  opacity: 0.75;
 }
