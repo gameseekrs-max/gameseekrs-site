@@ -32,7 +32,7 @@ Policy text may also exist as markdown in the public **[Gameseekrs](https://gith
 2. **Settings → Pages:** Deploy from branch **`main`**, folder **`/ (root)`**.
 3. **Custom domain:** `gameseekrs.sol.site` — root **`CNAME`** supports GitHub Pages. In **Settings → Pages → Custom domain**, add the hostname, wait for DNS check, **Enforce HTTPS**. In **sns.id**, **Configure Sol.site** with CNAME to **`gameseekrs-max.github.io`** ([Sol.site DNS](https://docs.sns.id/collection/sns-v2/sol.site/website-configuration.md)). Only one site should publish the same hostname.
 
-Hosting is **Git only** (GitHub Pages + Sol.site). Legacy **`firebase.json`** / **`scripts/ipfs-*.sh`** files are not part of the active deploy path.
+Hosting is **Git only** (GitHub Pages + Sol.site).
 
 ## First-time clone and push
 
