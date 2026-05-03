@@ -19,6 +19,8 @@ Public **static hub** for the **GameSeekrs** line (Solana Mobile Seeker) — sam
 | **`assets/hub-site.css`** | Landing page layout and theme (distinct from Optima hub) |
 | **`assets/legal.css`** | Shared stylesheet for legal pages + legal library |
 
+**Agent / thread handoff:** This repo is **public** — do **not** add long **`CONTINUATION.md`** narratives here (root **`CONTINUATION.md`** is **`.gitignore`d**). Use private **`gameseekrs-max/VaultRunner`** → **`docs/continuation.md`**.
+
 **Authoritative markdown** for policy text still lives in **`gameseekrs-max/Gameseekrs`** (`PRIVACY.md`, `docs/*.md`). When those change, update the matching HTML here (or generate later).
 
 ## Relationship to Gameseekrs repo
