@@ -7,7 +7,7 @@ STAGE="${STAGE:-/tmp/gameseekrs-site-ipfs-stage}"
 
 rm -rf "$STAGE"
 mkdir -p "$STAGE/assets" "$STAGE/vault-runner" "$STAGE/flashlight"
-cp "$ROOT/index.html" "$STAGE/"
+cp "$ROOT/index.html" "$ROOT/copyright.html" "$STAGE/"
 cp "$ROOT/assets/legal.css" "$STAGE/assets/"
 cp "$ROOT/vault-runner"/*.html "$STAGE/vault-runner/"
 cp "$ROOT/flashlight"/*.html "$STAGE/flashlight/"
