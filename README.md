@@ -21,6 +21,8 @@ Public **static hub** for the **GameSeekrs** line (Solana Mobile Seeker) — sam
 
 **Agent / thread handoff:** This repo is **public** — do **not** add long **`CONTINUATION.md`** narratives here (root **`CONTINUATION.md`** is **`.gitignore`d**). Use private **`gameseekrs-max/VaultRunner`** → **`docs/continuation.md`**.
 
+**Brand copy (2026-05-04):** GameSeekrs is **games and utilities**. Do **not** use medical, wellness, or health-product disclaimers on this hub or in linked store copy; that positioning is **Optima Sanitas** only. See **`VaultRunner/docs/continuation.md`** (*GameSeekrs public copy — not health or wellness positioning*).
+
 **Org GitHub visibility (`gameseekrs-max`):** Only **`gameseekrs-site`** (this repo) and **`Gameseekrs`** (Anchor + markdown policies) stay **public**. **`VaultRunner`**, **`GSkrsFlashlight`**, and other app repos remain **private** — do **not** change visibility without an explicit org decision; see **`gameseekrs-max/VaultRunner`** `docs/continuation.md` (section *gameseekrs-max org — GitHub visibility*).
 
 **Authoritative markdown** for policy text still lives in **`gameseekrs-max/Gameseekrs`** (`PRIVACY.md`, `docs/*.md`). When those change, update the matching HTML here (or generate later).
