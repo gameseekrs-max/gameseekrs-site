@@ -3,62 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vault Runner — privacy policy (GameSeekrs, Solana Mobile Seeker)." />
   <title>Privacy — Vault Runner — GameSeekrs</title>
+  <link rel="icon" href="../assets/brand-icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/brand-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/legal.css" />
 </head>
 <body>
-  <p class="nav-hub"><a href="../index.html">← GameSeekrs hub</a></p>
-  <main>
-    <h1>Privacy Policy — GameSeekrs: Vault Runner</h1>
-    <p class="meta">Last updated: April 26, 2026</p>
+  <div class="arena">
+    <header class="hero--legal">
+      <a href="../index.html" class="logo-wrap" aria-label="GameSeekrs home">
+        <img src="../assets/brand-icon.png" width="96" height="96" alt="" decoding="async" />
+      </a>
+      <p class="brand-title"><a href="../index.html">GameSeekrs</a></p>
+      <p class="tagline-legal"><a href="../legal.html">Legal library</a> · Vault Runner</p>
+    </header>
+    <main class="legal-doc">
+      <h1>Privacy Policy — Vault Runner</h1>
+      <p class="meta"><strong>Last updated:</strong> May 2, 2026 · <strong>Operator:</strong> GameSeekrs (gameseekrs-max). This page is a transparency template for engineering and store listings — not customized legal advice.</p>
 
-    <h2>Who we are</h2>
-    <p>
-      <strong>GameSeekrs</strong> publishes <strong>Vault Runner</strong>—an arcade game for
-      <a href="https://solanamobile.com/seeker">Solana Mobile Seeker</a> (Android). This client ships for the
-      Solana Mobile dApp Store; we do <strong>not</strong> provide an iOS build. We do not operate a standalone
-      website; high scores and updates on <a href="https://x.com/gameseekrs">@gameseekrs</a>.
-    </p>
-    <p>
-      This policy covers the <strong>Vault Runner</strong> mobile app and its use of the on-chain program on
-      Solana (open source in the public <strong>Gameseekrs</strong> repository).
-    </p>
+      <h2>Introduction</h2>
+      <p><strong>Vault Runner</strong> (the “App”) is a skill-based arcade title built for <strong>Solana Mobile Seeker</strong> (Solana Mobile’s <strong>Android</strong> handset). It may use <strong>optional</strong> <strong>Mobile Wallet Adapter (MWA)</strong> flows, read-only Solana RPC calls, and on-chain programs described in our public repository. We do <strong>not</strong> ship an iOS build of this title. High scores and product updates are announced on <a href="https://x.com/gameseekrs" rel="noopener noreferrer">@gameseekrs</a>.</p>
+      <p>This policy covers the <strong>Vault Runner</strong> client and its interaction with the on-chain program (open source in <a href="https://github.com/gameseekrs-max/Gameseekrs" rel="noopener noreferrer">gameseekrs-max/Gameseekrs</a>).</p>
+      <p>By using the App, you agree to this policy.</p>
 
-    <h2>On-chain program (transparent)</h2>
-    <ul>
-      <li><strong>Devnet program id:</strong> <code>J1K3v6h1gWDbMqTZCgCzhptHLphCmxqh11fJEMZhcTJA</code></li>
-      <li>Gameplay and rewards are exercised on <strong>Solana Devnet</strong> until announced otherwise.</li>
-      <li>Anchor source: <a href="https://github.com/gameseekrs-max/Gameseekrs">gameseekrs-max/Gameseekrs</a> — README and LICENSE.</li>
-    </ul>
+      <h2>What we do <strong>not</strong> operate by default</h2>
+      <ul>
+        <li><strong>No sale</strong> of your personal data.</li>
+        <li><strong>No</strong> GameSeekrs login or cloud “game account” beyond what you bring via a <strong>self-custodial wallet</strong>.</li>
+        <li><strong>No</strong> web cookies (this is a mobile app, not a first-party website).</li>
+        <li><strong>No</strong> GameSeekrs-operated in-app ad analytics SDK in the reference build described here; if that changes, this page and store listings should be updated before release.</li>
+      </ul>
 
-    <h2>What the app collects</h2>
-    <ul>
-      <li><strong>Wallet connection:</strong> your wallet <strong>public key</strong> is used to sign; we do not receive your seed phrase or private key.</li>
-      <li><strong>On-chain data:</strong> scores, gameplay txs, SBT mints, and token claims are public on Solana.</li>
-      <li><strong>Location / sensors:</strong> only as implemented in that build and disclosed on the store. No in-app ad analytics SDK in the reference build; if that changes, this page will be updated.</li>
-    </ul>
+      <h2>Information the App may use or display</h2>
+      <ul>
+        <li><strong>Wallet connection:</strong> your wallet <strong>public key</strong> is used when you connect or sign; we do <strong>not</strong> receive your seed phrase or private keys.</li>
+        <li><strong>On-chain data:</strong> scores, gameplay transactions, SBT mints, and token claims are <strong>public on Solana</strong> by design.</li>
+        <li><strong>RPC:</strong> requests to Solana RPC endpoints (defaults or those you configure) may be visible to the RPC operator.</li>
+        <li><strong>Location / sensors:</strong> only as implemented in a given store build and disclosed on the store listing — read the store description for that version.</li>
+      </ul>
 
-    <h2>What we do not do</h2>
-    <ul>
-      <li>No sale of personal data.</li>
-      <li>No account system beyond your self-custodial wallet.</li>
-      <li>No cookies (mobile app, not a website).</li>
-    </ul>
+      <h2>On-chain program (transparent)</h2>
+      <ul>
+        <li><strong>Devnet program id:</strong> <code>J1K3v6h1gWDbMqTZCgCzhptHLphCmxqh11fJEMZhcTJA</code></li>
+        <li>Gameplay and rewards are exercised on <strong>Solana Devnet</strong> until announced otherwise.</li>
+        <li>Anchor source: <a href="https://github.com/gameseekrs-max/Gameseekrs" rel="noopener noreferrer">gameseekrs-max/Gameseekrs</a> — README and LICENSE.</li>
+      </ul>
 
-    <h2>Children</h2>
-    <p>Not directed at children under 13 (or the age in your jurisdiction).</p>
+      <h2>Children</h2>
+      <p>The App is <strong>not directed</strong> at children under 13 (or the minimum age in your jurisdiction).</p>
 
-    <h2>Third parties</h2>
-    <p><strong>Solana RPC</strong> providers may see request metadata. <strong>X:</strong> if you open our profile, X&rsquo;s policy applies there.</p>
+      <h2>Third parties</h2>
+      <p><strong>Solana RPC</strong> providers may see request metadata. If you open our <strong>X</strong> profile or external links, those services’ policies apply there.</p>
 
-    <h2>Changes &amp; contact</h2>
-    <p>We may update this policy on GitHub. <strong>Contact:</strong> <a href="https://x.com/gameseekrs">@gameseekrs</a></p>
-    <p>Companion app <strong>GSkrs Flashlight</strong> has a separate policy: <a href="../flashlight/privacy.html">GSkrs Flashlight — Privacy</a></p>
+      <h2>Changes &amp; contact</h2>
+      <p>We may update this policy in the public site repository. The <strong>“Last updated”</strong> line above is the source of record for this HTML. <strong>Contact:</strong> <a href="https://x.com/gameseekrs" rel="noopener noreferrer">@gameseekrs</a> (preferred).</p>
+      <p><strong>Companion app:</strong> <strong>GSkrs Flashlight</strong> has a separate policy: <a href="../flashlight/privacy.html">GSkrs Flashlight — Privacy</a>.</p>
 
-    <p class="sourcelink">
-      Source markdown: <a href="https://github.com/gameseekrs-max/Gameseekrs/blob/main/PRIVACY.md">PRIVACY.md</a>
-    </p>
-  </main>
-  <footer>GameSeekrs — <a href="https://x.com/gameseekrs">@gameseekrs</a></footer>
+      <p class="sourcelink">Source markdown: <a href="https://github.com/gameseekrs-max/Gameseekrs/blob/main/PRIVACY.md" rel="noopener noreferrer">PRIVACY.md</a></p>
+      <p class="muted-legal"><em>Template for engineering transparency; have counsel review before production or store release.</em></p>
+
+      <p class="legal-nav"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="license.html">License</a> · <a href="../copyright.html">Copyright</a> · <a href="../legal.html">All legal</a> · <a href="../index.html">Site home</a></p>
+    </main>
+    <footer class="footer-site">GameSeekrs — <a href="https://x.com/gameseekrs" rel="noopener noreferrer">@gameseekrs</a></footer>
+  </div>
 </body>
 </html>
