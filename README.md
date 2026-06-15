@@ -22,8 +22,8 @@ Public **static hub** for **GameSeekrs** on [Solana Mobile Seeker](https://solan
 |------|------|
 | **`index.html`** | Brand hub — Vault Runner + Seekr Beam and links to legal pages |
 | **`vault-runner/*.html`** | Privacy, terms, license for **Vault Runner** |
-| **`seekr-beam/*.html`** | Privacy, terms, license for **Seekr Beam** |
-| **`flashlight/*.html`** | Legacy redirects → **`seekr-beam/`** |
+| **`seekrbeam/*.html`** | Privacy, terms, license for **Seekr Beam** |
+| **`flashlight/*.html`** | Legacy redirects → **`seekrbeam/`** |
 | **`assets/hub-site.css`** | Landing layout and theme |
 | **`assets/legal.css`** | Shared stylesheet for legal pages |
 
@@ -38,7 +38,7 @@ Policy text may also exist as markdown in the public **[Gameseekrs](https://gith
 
 **Repo `CNAME`:** `gameseekrs.com`
 
-Confirm in a browser: `https://gameseekrs.com/`, `…/vault-runner/privacy.html`, `…/seekr-beam/privacy.html` return **200**.
+Confirm in a browser: `https://gameseekrs.com/`, `…/vault-runner/privacy.html`, `…/seekrbeam/privacy.html` return **200**.
 
 Hosting is **Git only** (GitHub Pages + custom domain).
 
